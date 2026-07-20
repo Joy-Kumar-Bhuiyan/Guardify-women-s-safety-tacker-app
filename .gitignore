@@ -3,3 +3,4 @@ backend/node_modules/
 backend/.env
 frontend/node_modules/
 backend/serviceAccountKey.json
+node_modules/ 
