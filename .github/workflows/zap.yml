@@ -1,0 +1,24 @@
+name: Staging ZAP baseline
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  baseline:
+    if: vars.STAGING_URL != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: zaproxy/action-baseline@v0.15.0
+        with:
+          target: ${{ vars.STAGING_URL }}
+          fail_action: true
+          allow_issue_writing: false
+          cmd_options: '-a'
