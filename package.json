@@ -22,8 +22,8 @@
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build && npm run audit"
   },
   "lint-staged": {
-    "backend/**/*.{ts,js}": "npm --prefix backend exec eslint -- --fix",
-    "frontend/**/*.{ts,vue,js}": "npm --prefix frontend exec eslint -- --fix",
+    "backend/**/*.ts": "npm --prefix backend exec eslint -- --fix",
+    "frontend/**/*.{ts,vue}": "npm --prefix frontend exec eslint -- --fix",
     "**/*.{md,json,yml,yaml,css}": "prettier --write"
   },
   "devDependencies": {
