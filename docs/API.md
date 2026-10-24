@@ -55,7 +55,7 @@ Base path: `/api/v1`. JSON endpoints reject unknown fields. Protected routes use
 
 ```http
 POST /api/v1/sos
-Idempotency-Key: 6d14d33f-4291-41f9-bd09-4d4f63d1a57f
+Idempotency-Key: example-request-id
 Content-Type: application/json
 
 {
