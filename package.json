@@ -1,16 +1,35 @@
 {
-  "name": "guadify-app",
+  "name": "guardify",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd backend && npm start"
+  "private": true,
+  "description": "Consent-first safety coordination PWA and API",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "prepare": "husky",
+    "install:all": "npm ci --prefix backend && npm ci --prefix frontend",
+    "dev": "concurrently --kill-others-on-fail \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "start": "npm --prefix backend start",
+    "format": "prettier --write \"backend/**/*.{ts,json}\" \"frontend/**/*.{ts,vue,json,css,html}\" \"*.{md,json,yml,yaml}\" \"docs/**/*.md\" \".github/**/*.{yml,yaml}\"",
+    "format:check": "prettier --check \"backend/**/*.{ts,json}\" \"frontend/**/*.{ts,vue,json,css,html}\" \"*.{md,json,yml,yaml}\" \"docs/**/*.md\" \".github/**/*.{yml,yaml}\"",
+    "lint": "npm --prefix backend run lint && npm --prefix frontend run lint",
+    "typecheck": "npm --prefix backend run typecheck && npm --prefix frontend run typecheck",
+    "test": "npm --prefix backend test && npm --prefix frontend test",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "audit": "npm --prefix backend run audit && npm --prefix frontend run audit",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build && npm run audit"
+  },
+  "lint-staged": {
+    "backend/**/*.{ts,js}": "npm --prefix backend exec eslint -- --fix",
+    "frontend/**/*.{ts,vue,js}": "npm --prefix frontend exec eslint -- --fix",
+    "**/*.{md,json,yml,yaml,css}": "prettier --write"
+  },
   "devDependencies": {
-    "@react-native-community/cli": "^18.0.0"
+    "concurrently": "9.2.5",
+    "husky": "9.1.7",
+    "lint-staged": "17.6.0",
+    "prettier": "3.9.10"
   }
 }

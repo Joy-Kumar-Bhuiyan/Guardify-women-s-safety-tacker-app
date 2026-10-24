@@ -1,6 +1,41 @@
-backend/serviceAccountKey.json
-backend/node_modules/
-backend/.env
-frontend/node_modules/
-backend/serviceAccountKey.json
-node_modules/ 
+# Dependencies and build output
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+coverage/
+**/coverage/
+.vite/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+!**/.env.example
+**/serviceAccountKey.json
+*.pem
+*.key
+
+# Runtime data
+uploads/
+logs/
+*.log
+*.pid
+
+# Firebase and test artifacts
+.firebase/
+firebase-debug.log*
+playwright-report/
+test-results/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+desktop.ini
+Thumbs.db
+
+# Security tooling and local scratch
+bfg-*.jar
+.gitleaks-report.json
+.semgrep/
