@@ -18,7 +18,7 @@ This is a release candidate, not an unconditional production launch approval. Th
 - The production PWA contains 24 precache entries, disables source maps, and keeps its largest JavaScript chunk at 148.60 kB.
 - Working-tree high-risk token scanning and `git diff --check` pass.
 
-Docker and gitleaks executables are unavailable on the verification host, so the container build and complete Git-history secret scan are delegated to GitHub Actions and must be reviewed after push.
+Docker and gitleaks executables are unavailable on the verification host. GitHub Actions run `40120868978` successfully completed formatting, backend, frontend/Playwright, CodeQL, gitleaks, and production-container jobs. The dependency-review job is intentionally pull-request-only and was skipped for this branch push.
 
 ## Launch blockers and owner actions
 
@@ -35,6 +35,6 @@ Docker and gitleaks executables are unavailable on the verification host, so the
 
 The release candidate uses server-verified Firebase identities, short-lived HttpOnly sessions, rotating hashed refresh tokens with reuse-family revocation, centralized owner/admin authorization, strict schemas, origin-based CSRF protection, hardened headers, scoped rate limits, structured redacted logs, and encrypted sensitive fields. Contact consent is explicit and revocable. SOS attempts are idempotent and provider results are independent and honest.
 
-The residual High risk is missing Web Push where it remains a stated requirement. Historical-secret exposure remains unresolved until rotation and the full-history gitleaks result are complete. Provider, staging, device, accessibility, performance, recovery, and deployment claims remain unverified until the owner-controlled exercises above are recorded.
+The residual High risk is missing Web Push where it remains a stated requirement. Historical-secret exposure remains a rotation concern even though the pushed-commit gitleaks job passed; removing a current file does not revoke any formerly exposed credential. Provider, staging, device, accessibility, performance, recovery, and deployment claims remain unverified until the owner-controlled exercises above are recorded.
 
 See `AUDIT.md`, `THREAT_MODEL.md`, `RUNBOOK.md`, `QA_CHECKLIST.md`, and `SECRETS_ROTATION.md` for evidence and procedures.

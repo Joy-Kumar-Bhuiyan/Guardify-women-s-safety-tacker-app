@@ -13,8 +13,8 @@ Record environment, commit SHA, tester, date, device/browser, evidence link, and
 - [x] Backend and frontend production dependency audit: zero high/critical.
 - [x] Local Playwright release suite: 4/4 passed on 2026-10-25.
 - [x] Working-tree high-risk token scan and `git diff --check`.
-- [ ] CI results green on GitHub (requires push).
-- [ ] CodeQL and gitleaks history scan green on GitHub (requires push; inherited findings may require rotation/history rewrite).
+- [x] Push CI results green on GitHub (run `40120868978`).
+- [x] CodeQL and gitleaks pushed-commit scan green on GitHub (run `40120868978`).
 
 ## Account and session
 

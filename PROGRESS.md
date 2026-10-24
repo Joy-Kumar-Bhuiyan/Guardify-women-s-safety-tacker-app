@@ -59,8 +59,9 @@ Status values: `TODO`, `IN PROGRESS`, `DONE`, `BLOCKED`, `N/A`.
 - DONE — Dependabot for npm and GitHub Actions.
 - DONE — Combined multi-stage, non-root, read-only-capable Docker image with healthcheck; Compose supplies the external Firebase-backed application.
 - DONE — Railway Docker build, readiness gate, restart policy, environment table, staging/production, zero-downtime, and rollback instructions.
-- BLOCKED — Local container execution is not possible on this host because Docker is unavailable; the CI container build and owner staging deployment are the verification gates.
-- TODO — Push `production-ready` and record the resulting GitHub checks.
+- DONE — The non-root production container built successfully in GitHub Actions; Docker is unavailable for a local runtime exercise on this host.
+- DONE — Pushed only `production-ready`; GitHub Actions run `40120868978` passed formatting, backend, frontend/Playwright, CodeQL, gitleaks, and container jobs.
+- BLOCKED — Owner-controlled staging deployment, health verification, zero-downtime exercise, and rollback drill remain required.
 
 ## Milestone 7: documentation — DONE
 
@@ -73,7 +74,7 @@ Status values: `TODO`, `IN PROGRESS`, `DONE`, `BLOCKED`, `N/A`.
 - DONE — Removed old direct-database code, debug output, junk, and known oversized bundle; added safe pagination/limits and route splitting.
 - DONE — Re-reviewed consent links, combined-image CSP/geolocation headers, contact re-consent, retry deduplication, and provider degradation.
 - DONE — Final root formatting, lint, strict typecheck, coverage tests, builds, production audits, Playwright, diff checks, and working-tree secret checks pass locally.
-- IN PROGRESS — Commit logical changes, push only `production-ready`, and inspect the resulting GitHub checks.
+- DONE — Committed logical changes, pushed only `production-ready`, inspected the jobs and corrected one documentation false positive; the resulting CI run passed.
 
 ## Baseline evidence (2026-10-24)
 
@@ -90,4 +91,4 @@ Status values: `TODO`, `IN PROGRESS`, `DONE`, `BLOCKED`, `N/A`.
 - Playwright: 4 tests PASS, covering tracking/acknowledgement, expiry privacy, denied geolocation, contact consent, and logout.
 - Largest production JavaScript chunk: 148.60 kB; source maps disabled; 24 PWA precache entries.
 - Root production dependency audit: 0 vulnerabilities. `git diff --check` and the working-tree high-risk token scan pass.
-- Docker/gitleaks executables are unavailable locally; equivalent CI jobs are configured.
+- Docker/gitleaks executables are unavailable locally; their GitHub Actions jobs passed in run `40120868978`.
