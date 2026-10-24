@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-label="Guardify">
+  <rect width="192" height="192" rx="46" fill="#6d1836"/>
+  <path d="M96 30c23 18 43 20 54 22v42c0 35-23 57-54 70-31-13-54-35-54-70V52c11-2 31-4 54-22Z" fill="#fff9fb"/>
+  <circle cx="96" cy="91" r="19" fill="#b20f35"/>
+  <path d="M96 116v22" stroke="#b20f35" stroke-width="12" stroke-linecap="round"/>
+</svg>

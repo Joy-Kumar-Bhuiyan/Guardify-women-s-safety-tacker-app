@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Guardify">
+  <rect width="512" height="512" rx="122" fill="#6d1836"/>
+  <path d="M256 80c61 48 115 53 144 59v112c0 93-61 151-144 186-83-35-144-93-144-186V139c29-6 83-11 144-59Z" fill="#fff9fb"/>
+  <circle cx="256" cy="243" r="51" fill="#b20f35"/>
+  <path d="M256 310v59" stroke="#b20f35" stroke-width="32" stroke-linecap="round"/>
+</svg>
